@@ -39,14 +39,23 @@
 COLLS.forEach((c,i)=>{$("#c"+(i+1)).innerHTML=`<a class="zoom ct" href="collection.html?c=${c.s}"><div class="ph" data-label="${c.n}" data-img=""><b class="no">0${i+1}</b><span class="orb">Explore</span><div class="ov"><h3>${c.n}</h3><p>${c.d}</p></div></div></a>`});
 const hr=$(".hero");for(let i=0;i<16;i++){const e=document.createElement("span");e.className="sp";e.textContent="✦";e.style.cssText=`left:${Math.random()*95}%;top:${Math.random()*80}%;font-size:${8+Math.random()*14}px;animation-delay:${Math.random()*4}s`;hr.appendChild(e)}
 const picks=[COLLS[0].p[0],COLLS[1].p[0],COLLS[2].p[1],COLLS[3].p[0]];
-$("#featured-grid").innerHTML=picks.map((p,i)=>{const c=COLLS.find(x=>x.p.includes(p));return `<article class="featured-card rv">
-  <a class="featured-photo" href="product.html?c=${c.s}&p=${p.id}" aria-label="View ${p.n}">
-    <div class="ph" data-label="${p.n}" data-img=""></div>
-    <span class="featured-index">0${i+1}</span><span class="featured-tag">${c.n}</span>
-  </a>
-  <div class="featured-meta"><div><span class="featured-kicker">${p.shape} · ${p.carat} ct</span><h3>${p.n}</h3><p>${p.set} setting · ${p.metals[0]}</p></div>
-    <a class="featured-cta" href="product.html?c=${c.s}&p=${p.id}">View Piece <span>↗</span></a>
-  </div>
-</article>`}).join("");
+const featuredPhotos=[
+  "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=88",
+  "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=88",
+  "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=88",
+  "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=88"
+];
+$("#featured-grid").innerHTML=picks.map((p,i)=>{
+  const c=COLLS.find(x=>x.p.includes(p));
+  return `<article class="featured-card">
+    <a class="featured-photo" href="product.html?c=${c.s}&p=${p.id}" aria-label="View ${p.n}">
+      <img src="${featuredPhotos[i]}" alt="${p.n} lab-grown diamond jewellery" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('image-fallback')">
+      <span class="featured-index">0${i+1}</span><span class="featured-tag">${c.n}</span>
+    </a>
+    <div class="featured-meta"><div><span class="featured-kicker">${p.shape} · ${p.carat} ct</span><h3>${p.n}</h3><p>${p.set} setting · ${p.metals[0]}</p></div>
+      <a class="featured-cta" href="product.html?c=${c.s}&p=${p.id}">Discover Piece <span>↗</span></a>
+    </div>
+  </article>`;
+}).join("");
 tint();
 </script></body></html>
