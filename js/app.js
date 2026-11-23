@@ -40,3 +40,5 @@ requestAnimationFrame(()=>document.body.classList.add("on"));
 $$("a[href]").forEach(a=>{const h=a.getAttribute("href");if(h&&!h.startsWith("#")&&!h.startsWith("http")&&!h.startsWith("mailto")&&!h.includes("wa.me"))a.addEventListener("click",e=>{if(e.metaKey||e.ctrlKey)return;e.preventDefault();document.body.classList.add("out");setTimeout(()=>location.href=h,450)})});
 addEventListener("pageshow",()=>document.body.classList.remove("out"));
 if(matchMedia("(hover:hover)").matches){const c=$(".cur");addEventListener("mousemove",e=>{c.style.left=e.clientX+"px";c.style.top=e.clientY+"px";c.classList.toggle("h",!!e.target.closest("a,button,.chip"))})}
+
+function tint(r=document){const k=[0,1,4,5];$$(".ph",r).forEach(p=>{if([...p.classList].some(c=>/^t\d$/.test(c)))return;const l=p.dataset.label||"";let h=0;for(const ch of l)h+=ch.charCodeAt(0);p.classList.add("t"+(p.classList.contains("l")?2+h%2:k[h%4]))})}tint();
