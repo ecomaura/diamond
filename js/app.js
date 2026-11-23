@@ -42,3 +42,51 @@ addEventListener("pageshow",()=>document.body.classList.remove("out"));
 if(matchMedia("(hover:hover)").matches){const c=$(".cur");addEventListener("mousemove",e=>{c.style.left=e.clientX+"px";c.style.top=e.clientY+"px";c.classList.toggle("h",!!e.target.closest("a,button,.chip"))})}
 
 function tint(r=document){const k=[0,1,4,5];$$(".ph",r).forEach(p=>{if([...p.classList].some(c=>/^t\d$/.test(c)))return;const l=p.dataset.label||"";let h=0;for(const ch of l)h+=ch.charCodeAt(0);p.classList.add("t"+(p.classList.contains("l")?2+h%2:k[h%4]))})}tint();
+
+
+// Curated editorial photography — real jewellery imagery replaces abstract gem placeholders.
+const PHOTO_LIBRARY = {
+  hero: ["photo-1605100804763-247f67b3557e","photo-1617038220319-276d3cfab638","photo-1603561596112-0a132b757442"],
+  ring: ["photo-1605100804763-247f67b3557e","photo-1603561596112-0a132b757442","photo-1617038220319-276d3cfab638","photo-1611652022419-a9419f74343d"],
+  earrings: ["photo-1535632066927-ab7c9ab60908","photo-1611591437281-460bfbe1220a","photo-1617038260897-41a1f14a8ca0"],
+  necklace: ["photo-1599643478518-a784e5dc4c8f","photo-1515562141207-7a88fb7ce338","photo-1611652022419-a9419f74343d"],
+  bracelet: ["photo-1515562141207-7a88fb7ce338","photo-1611591437281-460bfbe1220a","photo-1617038260897-41a1f14a8ca0"],
+  atelier: ["photo-1603561596112-0a132b757442","photo-1617038220319-276d3cfab638","photo-1535632066927-ab7c9ab60908"],
+  boutique: ["photo-1605100804763-247f67b3557e","photo-1599643478518-a784e5dc4c8f","photo-1515562141207-7a88fb7ce338"]
+};
+const photoHash = s => [...String(s)].reduce((a,c)=>a+c.charCodeAt(0),0);
+function photoFor(label, el) {
+  const t = String(label || "").toLowerCase();
+  let group = "ring";
+  if (/hero|closing|forever|editorial|campaign/.test(t)) group = "hero";
+  else if (/atelier|jeweller|craft|setting|sketch|diamond selection|facets|pav[eé]|milgrain|side profile|macro/.test(t)) group = "atelier";
+  else if (/earring|stud|drop|huggie|chandelier|hoop/.test(t)) group = "earrings";
+  else if (/necklace|pendant|collar|rivi[eè]re/.test(t)) group = "necklace";
+  else if (/bracelet|cuff|line/.test(t)) group = "bracelet";
+  else if (/boutique|interior|story/.test(t)) group = "boutique";
+  else if (/engagement|ring|solitaire|halo|trilogy|cathedral|pav[eé]/.test(t)) group = "ring";
+  const list = PHOTO_LIBRARY[group];
+  const id = list[photoHash(label) % list.length];
+  return "https://images.unsplash.com/" + id + "?auto=format&fit=crop&w=1600&q=88";
+}
+function hydratePhotos(root=document) {
+  $$(".ph[data-img]", root).forEach(el => {
+    if (el.dataset.photoReady === "1") return;
+    const label = el.dataset.label || "Fine jewellery";
+    el.style.backgroundImage = 'url("' + photoFor(label, el) + '")';
+    el.classList.add("has-photo");
+    el.dataset.photoReady = "1";
+    el.setAttribute("role", "img");
+    el.setAttribute("aria-label", label);
+  });
+}
+hydratePhotos();
+const photoObserver = new MutationObserver(records => {
+  records.forEach(record => record.addedNodes.forEach(node => {
+    if (node.nodeType === 1) {
+      if (node.matches?.(".ph[data-img]")) hydratePhotos(node.parentElement || document);
+      else if (node.querySelectorAll) hydratePhotos(node);
+    }
+  }));
+});
+photoObserver.observe(document.body, {childList:true, subtree:true});
