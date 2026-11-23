@@ -1,263 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Maura Diamonds | Certified Lab-Grown Diamonds</title>
-<meta name="description" content="Certified lab-grown diamonds, rings and fine jewellery. Choose your pieces and enquire directly on WhatsApp.">
-<meta name="theme-color" content="#060E1A">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-:root{--night:#060E1A;--navy:#0C1A2E;--ivory:#F6F3EE;--frost:#E7EEF4;--ink:#0D1B2E;--slate:#56677A;--ice:#BFD9EE;--gold:#C2A670;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--ivory);color:var(--ink);line-height:1.65;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.wrap{max-width:1220px;margin:0 auto;padding:0 28px}
-h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1;letter-spacing:-.015em}
-h2{font-size:clamp(2.4rem,5vw,4.2rem);margin-bottom:20px}
-h2 em,h1 em{font-style:italic;color:var(--gold)}
-.lead{max-width:52ch;color:var(--slate);font-size:1.05rem}
-section{padding:120px 0;position:relative}
-.dark{background:var(--night);color:#fff}.dark .lead{color:#A9B8C9}
-header{position:fixed;top:0;left:0;right:0;z-index:20;color:#fff;transition:background .3s,color .3s}
-header.s{background:rgba(6,14,26,.86);backdrop-filter:blur(14px)}
-header .wrap{display:flex;justify-content:space-between;align-items:center;height:78px}
-.logo{font-family:var(--serif);font-size:1.75rem;font-weight:400;letter-spacing:.2em}
-nav{display:flex;gap:34px;align-items:center;font-size:.92rem;color:#D3DDE8}
-nav a:hover{color:var(--gold)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 32px;border:1px solid currentColor;font:400 .95rem var(--sans);letter-spacing:.04em;background:transparent;color:inherit;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
-.btn:hover{background:#fff;color:var(--night);border-color:#fff}
-.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--night)}
-.btn.gold:hover{background:#fff;border-color:#fff}
-.btn.ink{color:var(--ink)}.btn.ink:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-/* shared facet placeholder: swap by adding images/<name>.jpg */
-.gem{background:conic-gradient(from 15deg at 50% 42%,#f4faff,#a7c6e3 8%,#eef6fc 15%,#6f98c1 24%,#dcebf7 31%,#92b6d8 40%,#fff 47%,#7da6cf 56%,#d6e7f5 64%,#5f8bb6 73%,#e9f3fb 82%,#9cc0e0 91%,#f4faff)}
-/* hero */
-.hero{min-height:100vh;padding:140px 0 90px;display:flex;align-items:center;overflow:hidden;background:radial-gradient(ellipse 55% 60% at 78% 40%,#16345a 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 10% 100%,#1b2a44 0%,transparent 70%),var(--night)}
-.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(1.5px 1.5px at 12% 22%,#fff,transparent),radial-gradient(1.5px 1.5px at 38% 70%,#cfe3f5,transparent),radial-gradient(2px 2px at 62% 18%,#fff,transparent),radial-gradient(1.5px 1.5px at 88% 78%,#fff,transparent),radial-gradient(1px 1px at 52% 40%,#fff,transparent),radial-gradient(2px 2px at 24% 88%,#cfe3f5,transparent);animation:tw 5s ease-in-out infinite alternate;pointer-events:none}
-@keyframes tw{from{opacity:.25}to{opacity:.95}}
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;position:relative}
-.hero h1{font-size:clamp(3.6rem,7vw,6.6rem);line-height:.98;margin-bottom:28px}
-.hero .lead{margin-bottom:40px;color:#B4C3D4}
-.cta{display:flex;gap:14px;flex-wrap:wrap}
-.trust{display:flex;gap:40px;margin-top:56px;padding-top:30px;border-top:1px solid rgba(255,255,255,.14);flex-wrap:wrap}
-.trust div{font-size:.86rem;color:#9FB0C3;max-width:150px}
-.trust b{display:block;font:400 2.3rem/1 var(--serif);color:#fff;margin-bottom:6px}
-.frame{position:relative;width:100%;max-width:470px;margin-left:auto}
-.arch{aspect-ratio:3/4.3;border-radius:999px 999px 14px 14px;overflow:hidden;position:relative;box-shadow:0 50px 90px -30px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.2),0 0 0 14px rgba(255,255,255,.04)}
-.arch::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%);transform:translateX(-120%);animation:sheen 6s 1s ease-in-out infinite}
-@keyframes sheen{to{transform:translateX(120%)}}
-.arch img,.ph img,.bsp img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.badge{position:absolute;left:-46px;bottom:60px;background:rgba(246,243,238,.96);color:var(--ink);padding:18px 24px;box-shadow:0 24px 50px -16px rgba(0,0,0,.6);font-size:.85rem;line-height:1.4}
-.badge b{display:block;font:400 1.5rem/1.1 var(--serif)}
-.round{position:absolute;right:-26px;top:90px;width:118px;height:118px;border-radius:50%;border:5px solid var(--night);overflow:hidden;box-shadow:0 20px 40px -10px rgba(0,0,0,.6)}
-/* band */
-.band{background:var(--gold);color:var(--night);padding:20px 0;overflow:hidden;white-space:nowrap}
-.band div{display:inline-block;animation:slide 32s linear infinite;font:400 1.35rem var(--serif);letter-spacing:.06em}
-.band span{margin:0 34px}.band i{font-style:normal;opacity:.5}
-@keyframes slide{to{transform:translateX(-50%)}}
-/* collection */
-.bar{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:54px}
-.chips{display:flex;gap:10px;flex-wrap:wrap}
-.chip{padding:10px 22px;border:1px solid #C3CBD3;border-radius:40px;background:transparent;font:400 .88rem var(--sans);color:var(--slate);cursor:pointer;transition:.25s}
-.chip:hover{border-color:var(--ink);color:var(--ink)}
-.chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:30px}
-.card{display:flex;flex-direction:column}
-.ph{position:relative;aspect-ratio:4/5;overflow:hidden;display:grid;place-items:center;background:conic-gradient(from 15deg at 50% 42%,#f4faff,#a7c6e3 8%,#eef6fc 15%,#6f98c1 24%,#dcebf7 31%,#92b6d8 40%,#fff 47%,#7da6cf 56%,#d6e7f5 64%,#5f8bb6 73%,#e9f3fb 82%,#9cc0e0 91%,#f4faff);transition:box-shadow .4s}
-.card:hover .ph{box-shadow:0 30px 60px -26px rgba(13,27,46,.6)}
-.ph svg{width:38%;filter:drop-shadow(0 6px 14px rgba(13,27,46,.3))}
-.ph span{position:absolute;top:16px;left:16px;font-size:.76rem;background:rgba(246,243,238,.92);padding:4px 12px;border-radius:30px}
-.ph .enq{position:absolute;left:0;right:0;bottom:0;transform:translateY(101%);transition:transform .4s;background:rgba(6,14,26,.92);color:#fff;padding:15px;text-align:center;font-size:.9rem;z-index:2}
-.card:hover .enq{transform:none}
-.info{padding:20px 4px 0}
-.info h3{font-size:1.8rem;margin-bottom:4px}
-.spec{font-size:.9rem;color:var(--slate)}
-.row{display:flex;gap:10px;margin-top:16px}
-.row .btn{padding:11px 16px;font-size:.85rem;flex:1}
-.card.on .add{background:var(--gold);border-color:var(--gold);color:var(--night)}
-/* bespoke */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
-.bsp{position:relative;aspect-ratio:4/5}
-.bsp .a,.bsp .b{position:absolute;overflow:hidden}
-.bsp .a{inset:0 22% 14% 0}.bsp .b{width:46%;aspect-ratio:1;right:0;bottom:0;border:8px solid var(--night)}
-.list{margin-top:34px;display:grid;gap:18px}
-.list div{padding-left:22px;border-left:1px solid var(--gold)}
-.list b{font:400 1.45rem var(--serif);display:block;color:#fff}
-.list p{font-size:.93rem;color:#A9B8C9}
-/* why */
-.why{background:var(--frost)}
-.why .cols{display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start}
-table{width:100%;border-collapse:collapse}
-th,td{text-align:left;padding:20px 0;border-bottom:1px solid #C4D0DB;font-weight:300}
-th{font:400 1.3rem var(--serif);width:34%}
-/* steps */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:56px}
-.steps div{padding-top:26px;border-top:1px solid rgba(255,255,255,.25)}
-.steps b{font:300 3.4rem/1 var(--serif);color:var(--gold)}
-.steps h3{font-size:1.7rem;margin:12px 0 8px}
-.steps p{font-size:.93rem;color:#A9B8C9}
-/* faq */
-.faq{max-width:820px;margin:50px auto 0}
-details{border-bottom:1px solid #CFC9BE;padding:24px 0}
-summary{font:400 1.7rem var(--serif);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px}
-summary::after{content:"+";color:var(--gold);transition:transform .3s}
-details[open] summary::after{transform:rotate(45deg)}
-details p{margin-top:12px;color:var(--slate);max-width:62ch}
-/* cta */
-.end{text-align:center;background:radial-gradient(ellipse 60% 80% at 50% 120%,#1d4272 0%,transparent 70%),var(--night)}
-.end h2{font-size:clamp(3rem,7.5vw,6.4rem)}
-.end .lead{margin:0 auto 40px}
-footer{background:var(--night);color:#7F90A4;padding:34px 0 100px;font-size:.85rem;border-top:1px solid rgba(255,255,255,.1)}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.basket{position:fixed;left:50%;bottom:22px;transform:translate(-50%,140%);z-index:30;background:var(--ivory);color:var(--ink);padding:12px 14px 12px 26px;display:flex;gap:22px;align-items:center;box-shadow:0 20px 60px -10px rgba(0,0,0,.6);visibility:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),visibility .45s;max-width:calc(100vw - 24px)}
-.basket.show{transform:translate(-50%,0);visibility:visible}
-.basket .btn{background:var(--night);color:#fff;border-color:var(--night);padding:12px 22px}
-.basket .x{background:none;border:0;color:var(--slate);cursor:pointer;font:400 .82rem var(--sans)}
-.wa{position:fixed;right:22px;bottom:22px;z-index:25;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(0,0,0,.5);transition:transform .2s}
-.wa:hover{transform:scale(1.08)}.wa svg{width:30px;fill:#fff}
-@media(max-width:920px){.hero .wrap,.split,.why .cols{grid-template-columns:1fr;gap:50px}.steps{grid-template-columns:1fr 1fr}nav a:not(.btn){display:none}section{padding:84px 0}.frame{margin:0 auto;max-width:360px}.badge{left:-12px}.round{right:-8px}.wa{bottom:92px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-</style>
-</head>
-<body>
-<header id="hd"><div class="wrap"><a href="#top" class="logo">MAURA</a>
-<nav><a href="#collection">Collection</a><a href="#bespoke">Bespoke</a><a href="#why">Why lab-grown</a><a href="#faq">FAQ</a><a class="btn" href="#" data-wa="general" style="padding:11px 22px">Chat on WhatsApp</a></nav></div></header>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Maison Aura — Exceptional Lab-Grown Diamond Jewellery</title><meta name="description" content="Exceptional lab-grown diamonds. Timeless artistry. Enquire with our jewellery specialists on WhatsApp."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css"></head><body>
+<main id="main">
+<section class="hero"><div class="ph par" data-label="Hero — macro brilliant-cut diamond, full-bleed" data-img=""></div><div class="in wrap"><span class="eyebrow">Maison Aura · Fine Jewellery</span><h1><span><i>An Extraordinary</i></span><span><i>Kind of <em>Forever.</em></i></span></h1><p class="sub">Exceptional lab-grown diamonds. Timeless artistry. A new perspective on luxury.</p><div class="ctas"><a class="btn fill" href="#collections">Explore the Collection</a><a class="btn" href="#story">Discover Our Story</a></div></div><div class="scroll" aria-hidden="true"></div></section>
 
-<main id="top">
-<section class="hero dark"><div class="wrap">
- <div>
-  <h1>Brilliance,<br><em>without</em><br>the mine.</h1>
-  <p class="lead">Certified lab-grown diamonds and fine jewellery, graded to the same standard as mined stones. Choose your pieces and we reply on WhatsApp with certificates and pricing.</p>
-  <div class="cta"><a class="btn gold" href="#collection">Explore the collection</a><a class="btn" href="#" data-wa="general">Talk to us</a></div>
-  <div class="trust"><div><b>IGI</b>and GIA certificate with every stone</div><div><b>D to F</b>colourless grades available</div><div><b>1 hr</b>typical WhatsApp reply</div></div>
- </div>
- <div class="frame">
-  <!-- HERO PHOTO: save as images/hero.jpg (portrait). Small circle: images/hero-2.jpg -->
-  <div class="arch gem"><img src="images/hero.jpg" alt="Lab-grown diamond ring" onerror="this.remove()"></div>
-  <div class="round gem"><img src="images/hero-2.jpg" alt="" onerror="this.remove()"></div>
-  <div class="badge"><b>Excellent cut</b>Laser-inscribed, certified</div>
- </div>
-</div></section>
+<section class="light pad" id="philosophy"><div class="wrap split"><div class="rv"><span class="eyebrow">Philosophy</span><h2>Brilliance, <em>Reimagined.</em></h2><p class="lead" style="margin-top:2rem">Advanced diamond-growing technology meets the patient hand of the traditional jeweller. The result is a diamond with the same fundamental chemical, physical and optical properties as a mined diamond — cut, graded and set with uncompromising precision.</p></div><div style="position:relative" class="rv"><div class="ph l" data-label="Atelier — jeweller setting a diamond" style="aspect-ratio:4/5" data-img=""></div><div class="ph" data-label="Detail — claw setting macro" style="position:absolute;width:42%;aspect-ratio:1;left:-12%;bottom:-8%;border:8px solid var(--ivory)" data-img=""></div></div></div></section>
 
-<div class="band" aria-hidden="true"><div><span>IGI certified</span><i>◆</i><span>GIA graded</span><i>◆</i><span>Conflict-free origin</span><i>◆</i><span>Made to order</span><i>◆</i><span>Lifetime polish</span><i>◆</i><span>IGI certified</span><i>◆</i><span>GIA graded</span><i>◆</i><span>Conflict-free origin</span><i>◆</i><span>Made to order</span><i>◆</i><span>Lifetime polish</span><i>◆</i></div></div>
+<section class="stone pad" id="collections"><div class="wrap"><div class="asym" style="margin-bottom:5rem"><h2 class="rv">The <em>Collections</em></h2><p class="lead rv">Six chapters of light, each composed as an editorial story.</p></div><div class="coll">
+<div class="c1 rv" id="c1"></div>
+<div class="c2 rv" id="c2"></div>
+<div class="c3 rv" id="c3"></div>
+<div class="c4 rv" id="c4"></div>
+<div class="c5 rv" id="c5"></div>
+<div class="c6 rv" id="c6"></div>
+</div></div></section>
 
-<section id="collection"><div class="wrap">
- <div class="bar"><div><h2>The <em>collection</em></h2><p class="lead">Add pieces to your enquiry and send them in one WhatsApp message.</p></div>
- <div class="chips" id="chips" role="group" aria-label="Filter"></div></div>
- <div class="grid" id="grid"></div>
-</div></section>
+<section class="dark pad" id="art"><span class="big" aria-hidden="true">Art</span><div class="wrap"><div class="asym"><div class="rv"><span class="eyebrow">The Art of the Diamond</span><h2>Every Facet. Every Detail. <em>Extraordinary.</em></h2></div><p class="lead rv">Each stone is selected for cut, clarity and fire, then examined under magnification before it is ever set. Our artisans shape every prong, gallery and pavé to cradle light — never to compete with it.</p></div><div class="facets"><div class="ph rv" data-label="Macro — table facet" data-img=""></div><div class="ph rv" data-label="Macro — crown reflections" data-img=""></div><div class="ph rv" data-label="Macro — pavé setting" data-img=""></div><div class="ph rv" data-label="Macro — milgrain edge" data-img=""></div></div></div></section>
 
-<section class="dark" id="bespoke"><div class="wrap split">
- <div class="bsp">
-  <!-- images/bespoke-1.jpg and images/bespoke-2.jpg -->
-  <div class="a gem"><img src="images/bespoke-1.jpg" alt="" onerror="this.remove()"></div>
-  <div class="b gem"><img src="images/bespoke-2.jpg" alt="" onerror="this.remove()"></div>
- </div>
- <div>
-  <h2>Designed around <em>you</em></h2>
-  <p class="lead">Bring a sketch, a reference photo or just an occasion. We source the stone, design the setting and show you every step on WhatsApp.</p>
-  <div class="list">
-   <div><b>Choose your stone</b><p>Any shape, any carat, with the certificate in hand before you commit.</p></div>
-   <div><b>Shape the setting</b><p>Gold, white gold or platinum, finished by master setters.</p></div>
-   <div><b>Delivered insured</b><p>Presented in a keepsake box with care guidance.</p></div>
-  </div>
-  <a class="btn gold" href="#" data-wa="custom" style="margin-top:40px">Start a custom design</a>
- </div>
-</div></section>
+<section class="light pad" id="why"><div class="wrap split"><div class="rv"><span class="eyebrow">Why Lab-Grown Diamonds</span><h2>The same diamond. <em>A modern</em> point of view.</h2><div class="ph l" data-label="Editorial — hand wearing solitaire" style="aspect-ratio:4/5;margin-top:3rem" data-img=""></div></div><ul class="pts rv"><li><b>01</b><div><h3>Identical in nature</h3><p>Lab-grown diamonds share the same fundamental physical and chemical properties as mined diamonds: pure carbon in a diamond crystal lattice.</p></div></li><li><b>02</b><div><h3>Brilliance and fire</h3><p>Cut to exacting proportions, they return light with the same optical character — scintillation, sparkle and spectral fire.</p></div></li><li><b>03</b><div><h3>Advanced technology</h3><p>Grown in controlled environments by sophisticated processes, then cut and polished by specialists.</p></div></li><li><b>04</b><div><h3>More accessible luxury</h3><p>Greater size, quality and design freedom for your investment.</p></div></li><li><b>05</b><div><h3>Conscious, modern luxury</h3><p>A considered choice for those who value transparency and a contemporary approach to fine jewellery.</p></div></li></ul></div></section>
 
-<section class="why" id="why"><div class="wrap cols">
- <div><h2>Same diamond. <em>Different origin.</em></h2><p class="lead">A lab-grown diamond is real crystallised carbon, identical in structure to a mined one. It is grown in weeks rather than billions of years, with a traceable source and a fairer price.</p></div>
- <table>
-  <tr><th>Material</th><td>Real carbon, same crystal structure as mined</td></tr>
-  <tr><th>Hardness</th><td>10 on the Mohs scale</td></tr>
-  <tr><th>Certified by</th><td>IGI or GIA, with laser inscription</td></tr>
-  <tr><th>Origin</th><td>Traceable to the grower</td></tr>
-  <tr><th>Value</th><td>Typically 60 to 80% below mined of equal grade</td></tr>
- </table>
-</div></section>
+<section class="dark pad" id="bespoke"><div class="wrap split"><div class="rv"><span class="eyebrow">Bespoke Jewellery</span><h2>Made for You. Designed to <em>Last Forever.</em></h2><p class="lead" style="margin:2rem 0">From the first sketch and diamond selection to the final polish, our specialists guide you through every decision of a one-of-a-kind piece.</p><a class="btn fill" data-wa="Hello, I would like to create a bespoke piece. Could a jewellery specialist guide me through design, diamond selection and pricing?" href="#">Create Your Bespoke Piece</a></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem" class="rv"><div class="ph" data-label="Design sketch" style="aspect-ratio:3/4" data-img=""></div><div class="ph" data-label="Diamond selection" style="aspect-ratio:3/4;margin-top:3rem" data-img=""></div></div></div></section>
 
-<section class="dark"><div class="wrap">
- <h2>How an <em>enquiry</em> works</h2><p class="lead">No forms, no accounts. Everything happens in a chat you already use.</p>
- <div class="steps">
-  <div><b>1</b><h3>Choose</h3><p>Browse and add the pieces you like.</p></div>
-  <div><b>2</b><h3>Send</h3><p>One tap opens WhatsApp with your list.</p></div>
-  <div><b>3</b><h3>Receive</h3><p>Live photos, videos, certificates and a quote.</p></div>
-  <div><b>4</b><h3>Confirm</h3><p>Approve, pay securely and we ship insured.</p></div>
- </div>
-</div></section>
+<section class="full" id="story"><div class="ph par" data-label="Brand story — full-width atelier photography" data-img=""></div><div class="in wrap"><span class="eyebrow">Our Story</span><h2>Born of patience. <em>Finished by hand.</em></h2><p class="lead" style="margin-top:1.5rem;opacity:.9">Maison Aura was founded on a simple conviction: that a diamond’s beauty lies in its light and the care taken over it — not in where it began. We pair modern diamond-growing with generations-old jewellery craft to create pieces made to be worn, treasured and handed down.</p><div class="stats"><div><b>01</b><span>Diamond by diamond</span></div><div><b>100%</b><span>Hand-finished</span></div><div><b>∞</b><span>Made to last</span></div></div></div></section>
 
-<section id="faq"><div class="wrap">
- <h2 style="text-align:center">Good to <em>know</em></h2>
- <div class="faq">
-  <details><summary>Is a lab-grown diamond a real diamond?</summary><p>Yes. It has the same chemical makeup, hardness and brilliance as a mined diamond. Only the origin differs.</p></details>
-  <details><summary>Will it come with a certificate?</summary><p>Every stone is graded by IGI or GIA and laser-inscribed with its report number.</p></details>
-  <details><summary>Which grades do you recommend?</summary><p>Cut matters most. E to G colour and VS clarity look flawless to the eye and keep the price sensible. We will advise on your budget.</p></details>
-  <details><summary>Can you make a custom design?</summary><p>Yes. Send a sketch or a photo on WhatsApp and we will quote the stone and the setting.</p></details>
- </div>
-</div></section>
-
-<section class="end dark" id="enquire"><div class="wrap">
- <h2>Let us find your <em>stone</em></h2>
- <p class="lead">Tell us the piece, the occasion or your budget. We reply on WhatsApp within the hour.</p>
- <a class="btn gold" href="#" data-wa="general">Message us on WhatsApp</a>
-</div></section>
+<section class="light pad" style="text-align:center"><div class="wrap"><div class="ph l rv" data-label="Closing — luxurious jewellery photograph" style="aspect-ratio:21/9;margin-bottom:5rem" data-img=""></div><h2 class="rv">Your Next Extraordinary <em>Piece Awaits.</em></h2><p class="lead rv" style="margin:2rem auto">Discover the diamond that speaks to you. Connect with our jewellery specialists for a personalised experience.</p><a class="btn fill rv" style="background:var(--char);color:var(--ivory);border-color:var(--char)" data-wa="Hello, I would like to begin an enquiry with a jewellery specialist." href="#">Begin Your Enquiry on WhatsApp</a></div></section>
 </main>
-
-<footer><div class="wrap"><span>Maura Diamonds. Certified lab-grown diamonds and fine jewellery.</span><span>Pricing shared on request via WhatsApp.</span></div></footer>
-
-<div class="basket" id="basket" role="status"><span id="count"></span><button class="x" id="clear">Clear</button><a class="btn" href="#" data-wa="basket">Send enquiry on WhatsApp</a></div>
-<a class="wa" href="#" data-wa="general" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.200 8.200 0 1 1 12 20.200zm4.500-6.100c-.2-.1-1.500-.7-1.700-.8-.2-.1-.4-.1-.6.100l-.8 1c-.1.200-.3.200-.5.100a6.700 6.700 0 0 1-3.300-2.900c-.2-.4.200-.4.700-1.300.1-.2 0-.3 0-.4l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.100-.7.300-.2.300-.9.900-.9 2.200s.9 2.600 1.100 2.700c.1.200 1.800 2.800 4.400 3.900 1.600.7 2.300.7 3.100.6.500-.1 1.500-.6 1.700-1.200.2-.6.200-1.100.1-1.200-.1-.1-.2-.2-.5-.3z"/></svg></a>
-
-<script>
-
-const WHATSAPP_NUMBER = "919999999999"; // country code + number, digits only
-const BRAND = "Maura Diamonds";
-/* Add photos as images/<id>.jpg to replace the placeholders */
-const ITEMS = [
- {id:"round-solitaire",n:"Round Brilliant Solitaire",cat:"Rings",s:"1.50 ct · E · VVS2 · IGI",sh:"round"},
- {id:"oval-halo",n:"Oval Halo Ring",cat:"Rings",s:"2.01 ct · F · VS1 · IGI",sh:"oval"},
- {id:"emerald-three",n:"Emerald-Cut Three-Stone",cat:"Rings",s:"2.40 ct total · E · VS1 · GIA",sh:"emerald"},
- {id:"pear-pendant",n:"Pear Drop Pendant",cat:"Pendants & Earrings",s:"1.10 ct · D · VVS2 · IGI",sh:"pear"},
- {id:"studs",n:"Princess-Cut Studs",cat:"Pendants & Earrings",s:"1.00 ct pair · F · VS1 · IGI",sh:"square"},
- {id:"tennis",n:"Classic Tennis Bracelet",cat:"Bracelets",s:"5.00 ct total · F · VS · IGI",sh:"round"},
- {id:"loose-round",n:"Loose Round Brilliant",cat:"Loose stones",s:"1.00–5.00 ct · D–G · IGI/GIA",sh:"round"},
- {id:"loose-fancy",n:"Loose Fancy Shapes",cat:"Loose stones",s:"Oval, pear, cushion, emerald · IGI/GIA",sh:"oval"}
-];
-const SH={round:'<circle cx="50" cy="50" r="38"/><circle cx="50" cy="50" r="20"/>',oval:'<ellipse cx="50" cy="50" rx="30" ry="42"/><ellipse cx="50" cy="50" rx="15" ry="22"/>',emerald:'<rect x="24" y="12" width="52" height="76" rx="8"/><rect x="36" y="28" width="28" height="44" rx="4"/>',pear:'<path d="M50 10C70 40 82 52 82 66a32 32 0 0 1-64 0C18 52 30 40 50 10z"/><path d="M50 36C60 52 64 58 64 66a14 14 0 0 1-28 0c0-8 4-14 14-30z"/>',square:'<rect x="18" y="18" width="64" height="64" rx="6"/><rect x="34" y="34" width="32" height="32" rx="3"/>'};
-const $=s=>document.querySelector(s), sel=new Set();
-let cat="All";
-const cats=["All",...new Set(ITEMS.map(i=>i.cat))];
-$("#chips").innerHTML=cats.map(c=>`<button class="chip" aria-pressed="${c==="All"}" data-c="${c}">${c}</button>`).join("");
-$("#chips").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;cat=b.dataset.c;document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===b));draw()};
-function draw(){
- $("#grid").innerHTML=ITEMS.filter(i=>cat==="All"||i.cat===cat).map(i=>`
- <article class="card ${sel.has(i.id)?"on":""}">
-  <div class="ph"><svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="1.4">${SH[i.sh]}</svg><span>${i.cat}</span>
-   <img src="images/${i.id}.jpg" alt="${i.n}" loading="lazy" onerror="this.remove()"><a class="enq" href="#" data-wa="${i.id}">Enquire on WhatsApp</a></div>
-  <div class="info"><h3>${i.n}</h3><p class="spec">${i.s}</p><p class="spec">Price on WhatsApp</p>
-  <div class="row"><button class="btn add" data-id="${i.id}">${sel.has(i.id)?"Added":"Add to enquiry"}</button><a class="btn" href="#" data-wa="${i.id}">Enquire</a></div></div>
- </article>`).join("");
-}
-$("#grid").onclick=e=>{const b=e.target.closest(".add");if(!b)return;const id=b.dataset.id;sel.has(id)?sel.delete(id):sel.add(id);draw();bask()};
-$("#clear").onclick=()=>{sel.clear();draw();bask()};
-function bask(){$("#count").textContent=sel.size+(sel.size===1?" piece":" pieces")+" in your enquiry";$("#basket").classList.toggle("show",sel.size>0)}
-function link(k){
- let t;
- if(k==="basket")t=`Hello ${BRAND}, I'd like details and pricing for:\n`+ITEMS.filter(i=>sel.has(i.id)).map(i=>`• ${i.n} (${i.s})`).join("\n");
- else if(k==="general")t=`Hello ${BRAND}, I'd like to know more about your lab-grown diamonds.`;
- else if(k==="custom")t=`Hello ${BRAND}, I would like to create a custom piece.`;
- else{const i=ITEMS.find(x=>x.id===k);t=`Hello ${BRAND}, I'm interested in the ${i.n} (${i.s}). Please share pricing and certificate details.`}
- return`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(t)}`;
-}
-document.addEventListener("click",e=>{const a=e.target.closest("[data-wa]");if(!a)return;e.preventDefault();window.open(link(a.dataset.wa),"_blank","noopener")});
-/* header */
-const hd=$("#hd");addEventListener("scroll",()=>hd.classList.toggle("s",scrollY>30),{passive:true});
-draw();bask();
-</script>
-</body>
-</html>
+<script src="js/app.js"></script><script>
+const pos=[1,2,3,4,5,6];COLLS.forEach((c,i)=>{$("#c"+(i+1)).innerHTML=`<a class="zoom" href="collection.html?c=${c.s}"><div class="ph${i%2?" l":""}" data-label="${c.n}" data-img=""></div><div class="cap"><h3>${c.n}</h3><span class="arrow">Explore</span></div><p style="font-size:.82rem;opacity:.65">${c.d}</p></a>`});
+</script></body></html>

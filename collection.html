@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Collection — Maison Aura</title><meta name="description" content="Browse the collection and enquire on WhatsApp."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css"></head><body>
+<main id="main"><section class="banner dark"><div class="ph par" id="bn" data-label="" data-img=""></div><div class="in wrap"><span class="eyebrow" id="eb"></span><h1 id="tt" style="font-size:clamp(3rem,7vw,6.5rem)"></h1></div></section>
+<section class="light pad" style="padding-top:5rem"><div class="wrap"><div class="asym"><p class="lead" id="ds"></p><a class="btn" id="ce" href="#" style="justify-self:end">Enquire on this collection</a></div>
+<div class="filters" id="fl"></div><div class="cat" id="ct"></div></div></section></main>
+<script src="js/app.js"></script><script>
+const c=COLLS.find(x=>x.s===new URLSearchParams(location.search).get("c"))||COLLS[0];document.title=c.n+" — Maison Aura";
+$("#bn").dataset.label=c.n+" — editorial banner";$("#eb").textContent="Collection";$("#tt").innerHTML=c.n;$("#ds").textContent=c.d+" Each piece is available in a choice of metals, with customisation on request.";
+$("#ce").href=wa(`Hello, I am interested in your ${c.n} collection. I would like to know more about available designs, pricing and customisation options.`);
+const F={shape:"All",metal:"All"};const shapes=["All",...new Set(c.p.map(p=>p.shape))],metals=["All",...METALS];
+function draw(){$("#fl").innerHTML=`<small>Shape</small>`+shapes.map(s=>`<button class="chip ${F.shape===s?"on":""}" data-k="shape" data-v="${s}">${s}</button>`).join("")+`<small style="margin-left:1.5rem">Metal</small>`+metals.map(s=>`<button class="chip ${F.metal===s?"on":""}" data-k="metal" data-v="${s}">${s}</button>`).join("");
+const l=c.p.filter(p=>(F.shape==="All"||p.shape===F.shape)&&(F.metal==="All"||p.metals.includes(F.metal)));
+$("#ct").innerHTML=l.length?l.map((p,i)=>`<a class="zoom" href="product.html?c=${c.s}&p=${p.id}"><div class="ph ${i%2?"":"l"}" data-label="${p.n}" data-img=""></div><div class="meta"><h3>${p.n}</h3><span>${p.shape} · ${p.carat} ct · ${p.set}</span></div></a>`).join(""):"<p>No pieces match — please enquire for a bespoke alternative.</p>";
+$$(".chip").forEach(b=>b.onclick=()=>{F[b.dataset.k]=b.dataset.v;draw()});$$(".ph[data-img]").forEach(p=>{if(p.dataset.img)p.style.backgroundImage=`url(${p.dataset.img})`})}
+draw();
+</script></body></html>
