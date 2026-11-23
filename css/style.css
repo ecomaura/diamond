@@ -295,3 +295,41 @@ footer { background:linear-gradient(135deg,#0b1720,#142d2c 55%,#101014); }
  .featured-tag { font-size:.5rem;letter-spacing:.1em; }
  .featured-foot { margin-top:2.5rem; }
 }
+
+/* MAISON AURA — unified plum, teal and copper identity */
+:root{--ivory:#F7F4EE;--champ:#F0C98A;--gold:#C58A52;--char:#211A27;--black:#17111E;--stone:#E8E1D9;--emerald:#075B55;--berry:#321B35;--midnight:#17111E;--plum:#24162D;--teal:#075B55;--paper:#F7F4EE}
+body{background:#F7F4EE;color:#251D2A}
+.light,#philosophy{background:#F7F4EE;color:#251D2A}
+.light h2,.light h3,#philosophy h2{color:#251D2A}.light p{color:#4D4650}.light em{color:#075B55}
+.stone,#collections{background:#E7E0D9;color:#24172C}.stone h2,.stone h3,#collections h2{color:#24172C}.stone p,#collections p{color:#514653}
+#why{background:#EAF1EF;color:#1D2928}#why h2,#why h3{color:#1D2928}#why p{color:#455653}
+#art{background:#075B55;color:#F7F4EE}#art h2,#art h3,#art p{color:#F7F4EE}#art h2 em{color:#F0C98A}
+#bespoke{background:#24162D;color:#F7F4EE}#bespoke h2,#bespoke p{color:#F7F4EE}#bespoke h2 em{color:#F0C98A}
+.featured{background:#EAF1EF;color:#211A27}.featured h2,.featured h3{color:#24162D}.featured p{color:#4D4650}
+.featured-card{background:#FFFEFB;border:1px solid rgba(36,22,45,.12);box-shadow:0 18px 42px -28px rgba(30,20,35,.35)}
+.featured-photo{aspect-ratio:4/5;background:#D6E2DE;display:block;position:relative;overflow:hidden}
+.featured-photo img{display:block;width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .8s ease,filter .6s ease}
+.featured-card:hover .featured-photo img{transform:scale(1.045);filter:saturate(1.08)}
+.featured-photo.image-fallback{background:linear-gradient(145deg,#075B55,#24162D)}
+.featured-meta h3{color:#24162D}.featured-kicker{color:#075B55;font-weight:700}.featured-cta{color:#075B55;border-color:rgba(7,91,85,.25)}.featured-cta span{border-color:#C58A52;color:#24162D}.featured-card:hover .featured-cta span{background:#F0C98A}
+.featured-foot .btn.ink{background:#24162D;border-color:#24162D;color:#fff}.featured-foot .btn.ink:hover{background:#075B55;border-color:#075B55;color:#fff}
+.hero{isolation:isolate;background:#17111E}
+.hero>.ph{z-index:-2;background-position:68% center!important}
+.hero::after{z-index:-1;background:linear-gradient(90deg,rgba(23,17,30,.94) 0%,rgba(23,17,30,.82) 38%,rgba(23,17,30,.28) 76%,rgba(23,17,30,.1) 100%),linear-gradient(0deg,rgba(23,17,30,.72),transparent 58%)!important}
+.hero .in{z-index:3;width:min(760px,72%);margin-left:clamp(1.4rem,6vw,6rem);padding:2.8rem 3rem 3.2rem!important;background:rgba(27,18,34,.88);border-left:3px solid #C58A52;box-shadow:0 24px 70px rgba(0,0,0,.25);backdrop-filter:blur(8px)}
+.hero .in::before{display:none!important}.hero h1{color:#fff;font-size:clamp(3.1rem,7vw,7rem);text-shadow:0 3px 20px rgba(0,0,0,.65)}
+.hero h1 em{background:none;color:#F0C98A;-webkit-text-fill-color:#F0C98A}.hero .eyebrow{color:#F0C98A}.hero .sub{color:#fff;max-width:31rem;font-weight:400}
+.hero .ctas .btn.fill{background:#F0C98A;color:#211A27;border-color:#F0C98A;box-shadow:none}.hero .ctas .btn.fill:hover{background:#fff;border-color:#fff}
+.hero .ctas .btn:not(.fill){background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}.hero .ctas .btn:not(.fill):hover{background:#fff;color:#211A27}
+header.solid,header.always{background:rgba(36,22,45,.97);color:#fff}header .logo{color:#F0C98A}nav a::after{background:#F0C98A}
+.btn{border-color:#075B55;color:#075B55}.btn:hover{background:#075B55;color:#fff;border-color:#075B55}.btn.fill{background:#075B55;color:#fff;border-color:#075B55}.btn.fill:hover{background:#24162D;color:#fff;border-color:#24162D}.btn.ink{background:#24162D;color:#fff;border-color:#24162D}
+.eyebrow,.light .eyebrow{color:#075B55}.dark .eyebrow,.hero .eyebrow,#art .eyebrow,#bespoke .eyebrow,.full .eyebrow{color:#F0C98A}
+.mq{background:#24162D;color:#F7F4EE;border-color:rgba(240,201,138,.35)}.mq b{color:#F0C98A}
+footer{background:#17111E;color:#F7F4EE;border-top:4px solid #C58A52}footer h4{color:#F0C98A}footer a:hover{color:#F0C98A}
+.wa{background:#F0C98A;color:#24162D;border:0}.wa:hover{background:#075B55;color:#fff}
+.info{background:#FFFEFB;color:#24162D;border-top:4px solid #075B55}.info h1,.info h2,.info h3{color:#24162D}
+.pcw .meta{background:#FFFEFB!important;color:#24172C}.pcw h3{color:#24172C}.pcw .go{border-color:#C58A52;color:#075B55}.pcw:hover .go{background:#F0C98A}
+.tag{color:#24172C}.pts b{-webkit-text-stroke-color:#075B55}.stats b{color:#F0C98A}
+.full{background:#24162D;color:#fff}.full h2,.full p{color:#fff}.full h2 em{color:#F0C98A}
+@media(max-width:760px){.hero{min-height:720px;height:auto;align-items:flex-end}.hero>.ph{background-position:64% center!important}.hero .in{width:auto;margin:0 1rem 4.5rem;padding:2rem 1.35rem 2.2rem!important;background:rgba(27,18,34,.94)}.hero h1{font-size:clamp(3rem,12vw,5rem)}.featured-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.featured-grid{grid-template-columns:1fr 1fr}.featured-meta h3{font-size:1.25rem}.featured-meta p{font-size:.64rem}.featured-photo img{min-height:230px}}
