@@ -1,17 +1,71 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Piece — Maison Aura</title><meta name="description" content="Product details and WhatsApp enquiry."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css"></head><body>
-<main id="main"><div class="wrap light"><div class="pd"><div class="gal" id="gl"></div><div class="info"><span class="eyebrow" id="eb"></span><h1 id="nm"></h1><p id="ds" style="opacity:.75"></p><div class="spec" id="sp"></div>
-<div class="opts"><small>Metal</small><div id="om"></div></div><div class="opts"><small>Diamond shape</small><div id="os"></div></div>
-<a class="btn fill" id="w1" href="#">Enquire on WhatsApp</a><a class="btn" id="w2" href="#">Request More Details</a><p style="font-size:.75rem;opacity:.6;margin-top:1.2rem">Pricing and customisation are shared personally by our jewellery specialists.</p></div></div><div style="height:6rem"></div></div></main>
-<script src="js/app.js"></script><script>
-const q=new URLSearchParams(location.search),c=COLLS.find(x=>x.s===q.get("c"))||COLLS[0],p=c.p.find(x=>x.id==q.get("p"))||c.p[0];document.title=p.n+" — Maison Aura";
-const S={metal:p.metals[0],shape:p.shape};$("#eb").innerHTML=`<a href="collection.html?c=${c.s}">← ${c.n}</a>`;$("#nm").textContent=p.n;
-$("#ds").textContent=`A ${p.set.toLowerCase()} ${p.type.toLowerCase()} set with an exceptional lab-grown diamond, hand-finished in our atelier.`;
-$("#gl").innerHTML=["Hero view","Side profile","Macro — diamond facets","Macro — setting detail"].map((l,i)=>`<div class="ph ${i%2?"":"l"}" data-label="${p.n} — ${l}" data-img=""></div>`).join("");
-function up(){$("#sp").innerHTML=[["Diamond shape",S.shape],["Carat weight",p.carat+" ct (approx.)"],["Setting",p.set],["Metal",S.metal],["Specifications","On request — cut, colour, clarity"],["Customisation","Metal, shape, size, engraving"]].map(r=>`<div><span>${r[0]}</span>${r[1]}</div>`).join("");
-$("#om").innerHTML=p.metals.map(m=>`<button class="chip ${S.metal===m?"on":""}" data-k="metal" data-v="${m}">${m}</button>`).join("");$("#os").innerHTML=SHAPES.map(m=>`<button class="chip ${S.shape===m?"on":""}" data-k="shape" data-v="${m}">${m}</button>`).join("");
-const sp=`${S.shape} diamond, ${p.carat} ct, ${S.metal}`;
-$("#w1").href=wa(`Hello, I am interested in the ${p.n} (${c.n}). Selected specifications: ${sp}. I would like to know more about its specifications, pricing and customisation options.`);
-$("#w2").href=wa(`Hello, could you please send me more details and images of the ${p.n} (${sp})?`);
-$$(".chip").forEach(b=>b.onclick=()=>{S[b.dataset.k]=b.dataset.v;up()})}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Piece — Maison Aura</title>
+<meta name="description" content="Explore a Maison Aura lab-grown diamond jewellery piece and enquire with our specialists.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main id="main" class="product-page">
+  <section class="product-stage">
+    <div class="product-gallery" id="gl" aria-label="Product photography"></div>
+    <aside class="product-panel">
+      <a class="product-back" id="back" href="collection.html?c=engagement-rings">← Back to collection</a>
+      <span class="eyebrow" id="eb">Maison Aura · Fine Jewellery</span>
+      <p class="product-edition">THE MAISON AURA EDIT</p>
+      <h1 id="nm"></h1>
+      <p class="product-description" id="ds"></p>
+      <div class="product-divider"></div>
+      <div class="product-specs" id="sp"></div>
+      <div class="product-options">
+        <div class="option-head"><span>01 / Choose your metal</span><small>Finish</small></div>
+        <div id="om" class="option-list"></div>
+      </div>
+      <div class="product-options">
+        <div class="option-head"><span>02 / Select diamond shape</span><small>Cut</small></div>
+        <div id="os" class="option-list"></div>
+      </div>
+      <div class="product-actions">
+        <a class="btn fill" id="w1" href="#">Enquire about this piece <span>↗</span></a>
+        <a class="product-secondary" id="w2" href="#">Request more details <span>↗</span></a>
+      </div>
+      <p class="product-note">Made to order. Our jewellery specialists will guide you through the details, pricing and personalisation.</p>
+    </aside>
+  </section>
+  <section class="product-story">
+    <div><span class="eyebrow">Considered in every detail</span><h2>Designed to be <em>worn forever.</em></h2></div>
+    <p>From the character of the diamond to the final polish, every detail is considered. Speak with our team to make this piece yours.</p>
+  </section>
+</main>
+<script src="js/app.js"></script>
+<script>
+const q=new URLSearchParams(location.search),c=COLLS.find(x=>x.s===q.get("c"))||COLLS[0],p=c.p.find(x=>x.id==q.get("p"))||c.p[0];
+document.title=p.n+" — Maison Aura";
+const S={metal:p.metals[0],shape:p.shape};
+$("#back").href="collection.html?c="+c.s;
+$("#eb").textContent="Maison Aura · "+c.n;
+$("#nm").textContent=p.n;
+$("#ds").textContent="A "+p.set.toLowerCase()+" "+p.type.toLowerCase()+" set with an exceptional lab-grown diamond, hand-finished in our atelier.";
+$("#gl").innerHTML=[
+  ["main","The hero view"],["side","Side profile"],["detail","Diamond detail"],["setting","Setting detail"]
+].map((x,i)=>`<div class="product-image product-image-${i+1} ph" data-label="${p.n} — ${x[1]}" data-img=""></div>`).join("");
+function up(){
+  $("#sp").innerHTML=[
+    ["Diamond","\u25C6 "+S.shape+" · "+p.carat+" ct"],
+    ["Setting",p.set],
+    ["Craft","Hand-finished"]
+  ].map(r=>`<div class="spec-tile"><span>${r[0]}</span><strong>${r[1]}</strong></div>`).join("");
+  $("#om").innerHTML=p.metals.map(m=>`<button class="chip ${S.metal===m?"on":""}" data-k="metal" data-v="${m}">${m}</button>`).join("");
+  $("#os").innerHTML=SHAPES.map(m=>`<button class="chip ${S.shape===m?"on":""}" data-k="shape" data-v="${m}">${m}</button>`).join("");
+  const sp=`${S.shape} diamond, ${p.carat} ct, ${S.metal}`;
+  $("#w1").href=wa(`Hello, I am interested in the ${p.n} (${c.n}). Selected specifications: ${sp}. Please share pricing and customisation options.`);
+  $("#w2").href=wa(`Hello, could you please send me more details and images of the ${p.n} (${sp})?`);
+  $$(".chip").forEach(b=>b.onclick=()=>{S[b.dataset.k]=b.dataset.v;up()});
+}
 up();tint();
-</script></body></html>
+</script>
+</body>
+</html>
