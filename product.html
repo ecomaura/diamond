@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0B1F3A">
+<title>Ecomaura | Product</title>
+<meta name="description" content="Certified lab grown diamond jewellery, made for everyday and priced fairly. Order on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.crumb{font-size:.85rem;color:var(--mute);padding:22px 0 24px}
+.crumb a:hover{color:var(--golddk)}
+.pdp{display:grid;grid-template-columns:1.12fr .88fr;gap:60px;align-items:start;padding-bottom:80px}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.gal .ph{aspect-ratio:1;border-radius:26px}
+.gal .ph:first-child{grid-column:span 2;aspect-ratio:5/4;border-radius:44px}
+.gal .ph:nth-child(3){border-radius:26px 120px 26px 26px}
+.count{display:none}
+.info{position:sticky;top:92px}
+.info .badge{position:static;display:inline-block;background:var(--gold);margin-bottom:14px}
+.info h1{font-size:clamp(2.7rem,4.4vw,3.9rem)}
+.rate{margin-top:12px;font-size:.9rem;color:var(--mute)}
+.rate i{font-style:normal;color:var(--golddk);letter-spacing:2px;margin-right:6px}
+.tag{margin-top:14px;color:var(--mute);font-weight:300;font-size:1.05rem;max-width:40ch}
+.pr{display:flex;align-items:baseline;gap:12px;margin:22px 0 4px;flex-wrap:wrap}
+.pr b{font-family:var(--display);font-weight:500;font-size:2.8rem;line-height:1}
+.pr s{color:var(--mute)}
+.save{font-size:.78rem;background:var(--soft);padding:3px 10px;border-radius:999px;font-weight:500}
+.tax{font-size:.8rem;color:var(--mute)}
+.opt{margin-top:24px}
+.opt .lab{display:flex;justify-content:space-between;font-size:.9rem;font-weight:500;margin-bottom:10px}
+.opt .lab span{color:var(--mute);font-weight:400}
+.sw,.pills{display:flex;flex-wrap:wrap;gap:10px}
+.sw button{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);cursor:pointer}
+.sw button[aria-pressed=true]{outline:1.5px solid var(--ink);outline-offset:3px}
+.pills button{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:.92rem}
+.pills button[aria-pressed=true]{background:var(--ink);color:var(--gold);border-color:var(--ink)}
+.opt select{width:100%;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:#fff;font-size:16px}
+.cta{display:grid;gap:10px;margin-top:30px}
+.assure{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px;text-align:center;font-size:.76rem;color:var(--mute);line-height:1.3}
+.assure div{padding:14px 6px;border:1px solid var(--line);border-radius:16px}
+.assure b{display:block;color:var(--ink);font-weight:500;font-size:.84rem}
+.acc{margin-top:26px}
+.acc details:first-child{border-top:1px solid var(--line)}
+.acc summary{font-size:1.35rem}
+.acc ul{margin:10px 0 0 18px;color:var(--mute)}
+.specs{background:linear-gradient(135deg,var(--ink),var(--navy2));color:#fff;border-radius:44px;margin:0 2%;padding:80px 0}
+.specs h2{margin-bottom:40px}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.sg div{padding:26px 0;border-top:1px solid rgba(255,255,255,.18);padding-right:20px}
+.sg small{display:block;color:#9fb0c6;font-size:.82rem;margin-bottom:6px}
+.sg b{font-family:var(--display);font-weight:500;font-size:1.7rem;line-height:1.1}
+.related{grid-template-columns:repeat(3,1fr)}
+.bar2{display:none}
+@media(max-width:900px){.pdp{grid-template-columns:1fr;gap:30px}.info{position:static}}
+@media(max-width:700px){
+  .crumb{padding:14px 0 16px}
+  .pdp{padding-bottom:50px}
+  .gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin:0 -5%;padding:0 5%;scrollbar-width:none}
+  .gal::-webkit-scrollbar{display:none}
+  .gal .ph,.gal .ph:first-child,.gal .ph:nth-child(3){flex:0 0 90%;grid-column:auto;aspect-ratio:1;scroll-snap-align:center;border-radius:26px}
+  .count{display:block;text-align:center;font-size:.8rem;color:var(--mute);margin-top:-14px}
+  .info h1{font-size:2.6rem}
+  .pr b{font-size:2.3rem}
+  .opt{margin-top:20px}
+  .cta .btn{padding:12px 20px}
+  .specs{margin:0 3%;border-radius:30px;padding:54px 0}
+  .sg{grid-template-columns:1fr 1fr}
+  .sg b{font-size:1.4rem}
+  .related{grid-template-columns:none}
+  .fab{display:none}
+  body{padding-bottom:78px}
+  .bar2{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:70;background:rgba(251,252,253,.96);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:10px 5% calc(10px + env(safe-area-inset-bottom));align-items:center;justify-content:space-between;gap:14px}
+  .bar2 small{display:block;color:var(--mute);font-size:.72rem;line-height:1}
+  .bar2 b{font-family:var(--display);font-weight:500;font-size:1.6rem;line-height:1.1}
+  .bar2 .btn{padding:11px 22px}
+}
+</style>
+</head>
+<body>
+<div class="ann"><span>Free insured shipping across India</span><span>30 day returns</span><span>Lifetime upgrade</span></div>
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="logo" href="index.html">ecomaura</a>
+    <ul>
+      <li><a href="index.html#shop">Shop</a></li>
+      <li><a href="index.html#why">Why lab grown</a></li>
+      <li><a href="index.html#studio">Design yours</a></li>
+      <li><a href="index.html#gifts">Gifts</a></li>
+      <li><a href="index.html#faq">Help</a></li>
+    </ul>
+    <div class="right">
+      <a class="btn sm wa-link" href="#" data-msg="Hi Ecomaura, I'd like some help choosing jewellery.">Chat<span class="lg">&nbsp;with us</span></a>
+      <button class="menu" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<main class="wrap" id="app"></main>
+<div class="bar2" id="bar2"><div><small>Total</small><b id="barPrice"></b></div><a class="btn wa-btn" id="barCta" href="#" target="_blank" rel="noopener">Order now</a></div>
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <p>Certified lab grown diamond jewellery, made in Surat and shipped across India.</p>
+      <a class="btn wh wa-link" href="#" data-msg="Hi Ecomaura, I have a question.">Message us</a>
+    </div>
+    <div class="big" aria-hidden="true">ecomaura</div>
+    <div class="legal"><span>© 2026 Ecomaura. All rights reserved.</span><span>Lab grown. Fully disclosed.</span></div>
+  </div>
+</footer>
+<script src="js/app.js"></script>
+<script src="js/products.js"></script>
+<script>
+const id=new URLSearchParams(location.search).get("id");
+const key=PRODUCTS[id]?id:"solitaire";
+const P=PRODUCTS[key];
+const sel=P.options.map(o=>0);
+document.title=P.name+" | Ecomaura";
+const optHTML=(o,i)=>{
+  let h='<div class="opt"><div class="lab">'+o.key+'<span id="v'+i+'"></span></div>';
+  if(o.type==="select") h+='<select data-i="'+i+'" aria-label="'+o.key+'">'+o.choices.map((c,j)=>'<option value="'+j+'">'+c.n+'</option>').join("")+'</select>';
+  else h+='<div class="'+(o.type==="swatch"?"sw":"pills")+'" data-i="'+i+'">'+o.choices.map((c,j)=>'<button type="button" data-j="'+j+'" aria-pressed="'+(j===0)+'" '+(o.type==="swatch"?'style="background:'+c.c+'" aria-label="'+c.n+'"':'')+'>'+(o.type==="swatch"?"":c.n+(c.add?'<small style="opacity:.6"> +'+inr(c.add)+'</small>':''))+'</button>').join("")+'</div>';
+  return h+'</div>';
+};
+const card=k=>{const p=PRODUCTS[k];return '<article class="prod"><a href="product.html?id='+k+'"><div class="ph">product image'+(p.badge?'<span class="badge">'+p.badge+'</span>':'')+'</div></a><div class="stars"><i>★★★★★</i> '+p.reviews+'</div><a href="product.html?id='+k+'"><h3>'+p.name+'</h3></a><div class="price">'+inr(p.price)+'<s>'+inr(p.mrp)+'</s></div><a class="btn sm out" href="product.html?id='+k+'">View details</a></article>'};
+document.getElementById("app").innerHTML=
+'<div class="crumb"><a href="index.html">Home</a> / <a href="index.html#bestsellers">Shop</a> / '+P.name+'</div>'+
+'<div class="pdp"><div><div class="gal" id="gal">'+[1,2,3,4,5].map(n=>'<div class="ph">product image '+n+'</div>').join("")+'</div><div class="count" id="count">1 / 5</div></div>'+
+'<div class="info">'+(P.badge?'<span class="badge">'+P.badge+'</span>':'')+'<h1>'+P.name+'</h1>'+
+'<div class="rate"><i>★★★★★</i>'+P.rating+' · '+P.reviews+' reviews</div><p class="tag">'+P.tag+'</p>'+
+'<div class="pr"><b id="price"></b><s>'+inr(P.mrp)+'</s><span class="save">Save '+Math.round((1-P.price/P.mrp)*100)+'%</span></div><div class="tax">Inclusive of all taxes. Free insured shipping.</div>'+
+P.options.map(optHTML).join("")+
+'<div class="cta"><a class="btn wa-btn" id="cta" href="#" target="_blank" rel="noopener">Order on WhatsApp</a><a class="btn out" id="ask" href="#" target="_blank" rel="noopener">Ask a question</a></div>'+
+'<div class="assure"><div><b>IGI certified</b>every stone</div><div><b>30 days</b>easy returns</div><div><b>Lifetime</b>upgrade</div></div>'+
+'<div class="acc"><details open><summary>About this piece</summary><p>'+P.tag+' Crafted in recycled gold or platinum and finished by hand in Surat, each piece arrives in a keepsake box with its certificate.</p></details>'+
+'<details><summary>What is included</summary><ul><li>Diamond grading certificate</li><li>Authenticity card and warranty</li><li>Keepsake jewellery box</li><li>Free cleaning and polishing for life</li></ul></details>'+
+'<details><summary>Shipping and returns</summary><p>Free insured shipping across India in 5 to 10 days. Return within 30 days for a refund or exchange, as long as the piece is unworn.</p></details></div></div></div>'+
+'';
+document.getElementById("app").insertAdjacentHTML("afterend",
+'<section class="specs"><div class="wrap"><h2>The details</h2><div class="sg">'+P.specs.map(s=>'<div><small>'+s[0]+'</small><b>'+s[1]+'</b></div>').join("")+'</div></div></section>'+
+'<section><div class="wrap"><div class="head"><h2>You may also love</h2></div><div class="grid4 related">'+Object.keys(PRODUCTS).filter(k=>k!==key).map(card).join("")+'</div></div></section>');
+
+function update(){
+  let total=P.price,lines=[];
+  P.options.forEach((o,i)=>{const c=o.choices[sel[i]];total+=c.add;lines.push(o.key+": "+c.n);document.getElementById("v"+i).textContent=c.n});
+  document.getElementById("price").textContent=inr(total);
+  document.getElementById("barPrice").textContent=inr(total);
+  const msg="Hi Ecomaura, I'd like to order the "+P.name+".\n"+lines.join("\n")+"\nPrice: "+inr(total)+"\n"+location.href;
+  ["cta","barCta"].forEach(x=>document.getElementById(x).href=wa(msg));
+  document.getElementById("ask").href=wa("Hi Ecomaura, I have a question about the "+P.name+". "+location.href);
+}
+document.querySelectorAll(".sw,.pills").forEach(g=>g.addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;
+  g.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed","false"));
+  b.setAttribute("aria-pressed","true");sel[g.dataset.i]=+b.dataset.j;update();
+}));
+document.querySelectorAll(".opt select").forEach(s=>s.addEventListener("change",()=>{sel[s.dataset.i]=+s.value;update()}));
+const gal=document.getElementById("gal");
+gal.addEventListener("scroll",()=>{document.getElementById("count").textContent=(Math.round(gal.scrollLeft/(gal.children[0].offsetWidth+10))+1)+" / 5"},{passive:true});
+update();initWA();
+</script>
+</body>
+</html>
