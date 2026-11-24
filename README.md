@@ -1,6 +1,5 @@
 # Ecomaura
-
-Static lab-grown diamond website with WhatsApp enquiries. No build step.
-
-- Set your number in `js/main.js` (`WA_NUMBER`, digits only with country code).
-- Image slots are blank `.ph` blocks in `index.html`. Swap each for an `<img>` when ready.
+Static luxury lab-grown diamond catalogue. WhatsApp enquiries only, no cart.
+- Set `WA_NUMBER` in `js/app.js`.
+- Edit collections and pieces in `js/data.js`.
+- Images are blank `.fr > .ph` frames; replace each `.ph` with an `<img>` (object-fit: cover) when ready.
